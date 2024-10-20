@@ -31,12 +31,19 @@ namespace EmployeesAPI.Controllers
 			}
 			catch (NotFoundException)
 			{
-				return NotFound();
+				AddUserErrorHeader();
+				return NotFound("Сотрудник с таким именем не найден.");
 			}
 			catch (InvalidOperationException exc)
 			{
+				AddUserErrorHeader();
 				return BadRequest(exc.Message);
 			}
+		}
+
+		private void AddUserErrorHeader()
+		{
+			Response.Headers.Append("ErrorType", "UserError");
 		}
 	}
 }

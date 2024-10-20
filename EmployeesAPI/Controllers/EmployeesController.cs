@@ -44,6 +44,7 @@ namespace EmployeesAPI.Controllers
 			}
 			catch (AlreadyExistsException)
 			{
+				AddUserErrorHeader();
 				return BadRequest("Сотрудник с таким именем уже существует.");
 			}
 			catch (CreationFailedException exc)
@@ -51,6 +52,11 @@ namespace EmployeesAPI.Controllers
 				_logger.LogError("Произошла ошибка при добавлении сотрудника в базу данных:\n{0}", exc);
 				return StatusCode(StatusCodes.Status500InternalServerError, "Ошибка при добавлении сотрудника в базу данных.");
 			}
+		}
+
+		private void AddUserErrorHeader()
+		{
+			Response.Headers.Append("ErrorType", "UserError");
 		}
 
 		/// <summary>
@@ -72,7 +78,8 @@ namespace EmployeesAPI.Controllers
 			}
 			catch (NotFoundException)
 			{
-				return NotFound();
+				AddUserErrorHeader();
+				return NotFound("Сотрудник с таким именем не найден.");
 			}
 		}
 
@@ -106,7 +113,8 @@ namespace EmployeesAPI.Controllers
 			}
 			catch (NotFoundException)
 			{
-				return NotFound();
+				AddUserErrorHeader();
+				return NotFound("Сотрудник с таким именем не найден.");
 			}
 			catch (UpdateFailedException exc)
 			{
@@ -134,7 +142,8 @@ namespace EmployeesAPI.Controllers
 			}
 			catch (NotFoundException)
 			{
-				return NotFound();
+				AddUserErrorHeader();
+				return NotFound("Сотрудник с таким именем не найден.");
 			}
 			catch (DeleteFailedException exc)
 			{
