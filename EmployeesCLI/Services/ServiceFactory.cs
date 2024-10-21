@@ -5,6 +5,9 @@ using EmployeesCLI.Models;
 
 namespace EmployeesCLI.Services
 {
+	/// <summary>
+	/// Фабрика сервисов.
+	/// </summary>
 	public class ServiceFactory : IServiceFactory
 	{
 		public IConfigurationVendor CreateConfigurationVendor() => new ConfigurationVendor();

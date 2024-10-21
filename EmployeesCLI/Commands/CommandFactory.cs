@@ -1,5 +1,8 @@
 ﻿namespace EmployeesCLI.Commands
 {
+	/// <summary>
+	/// Фабрика команд.
+	/// </summary>
 	public class CommandFactory : ICommandFactory
 	{
 		private enum CommandEnum : int

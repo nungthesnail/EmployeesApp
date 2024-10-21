@@ -3,6 +3,10 @@ using EmployeesCLI.Services;
 
 namespace EmployeesCLI.Commands
 {
+	/// <summary>
+	/// Запрашивает у пользователя данные для рассчета зарплаты сотрудника, отправляет запрос API на рассчета заработной платы
+	/// и отображает ответ.
+	/// </summary>
 	public class SalaryCommand : ICommand<Task>
 	{
 		private readonly IServiceFactory _serviceFactory = new ServiceFactory();

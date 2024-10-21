@@ -3,6 +3,9 @@ using EmployeesCLI.Services;
 
 namespace EmployeesCLI.Commands
 {
+	/// <summary>
+	/// Запрашивает данные сотрудника у пользователя и отправляет запрос API на создание сотрудника.
+	/// </summary>
 	public class CreateCommand : ICommand<Task>
 	{
 		private readonly IServiceFactory _serviceFactory = new ServiceFactory();

@@ -3,11 +3,21 @@ using EmployeesCLI.Models;
 
 namespace EmployeesCLI.Services.ErrorProcessing
 {
+	/// <summary>
+	/// Обработчик ошибок по умолчанию, выводящий в консоль информацию об ошибке.
+	/// </summary>
 	public class DefaultErrorProcessor : IErrorProcessor
 	{
+		/// <summary>
+		/// Обрабатываемая ошибка.
+		/// </summary>
 		public ErrorModel Error { get; }
 
-        public DefaultErrorProcessor(ErrorModel error)
+		/// <summary>
+		/// Обработчик ошибок по умолчанию, выводящий в консоль информацию об ошибке.
+		/// </summary>
+		/// <param name="error">Ошибка, которую необходимо обработать.</param>
+		public DefaultErrorProcessor(ErrorModel error)
         {
             Error = error;
         }

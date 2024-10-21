@@ -2,6 +2,9 @@
 
 namespace EmployeesCLI.Commands
 {
+	/// <summary>
+	/// Запрашивает имя сотрудника у пользователя и отправляет запрос API на удаление сотрудника.
+	/// </summary>
 	public class DeleteCommand : ICommand<Task>
 	{
 		private readonly IServiceFactory _serviceFactory = new ServiceFactory();

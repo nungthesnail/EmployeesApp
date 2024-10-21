@@ -2,6 +2,9 @@
 
 namespace EmployeesCLI.Commands
 {
+	/// <summary>
+	/// Отправляет запрос API на получение всех сотрудников и выводит их в консоль.
+	/// </summary>
 	public class GetAllCommand : ICommand<Task>
 	{
 		private readonly IServiceFactory _serviceFactory = new ServiceFactory();

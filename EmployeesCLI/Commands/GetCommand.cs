@@ -2,6 +2,10 @@
 
 namespace EmployeesCLI.Commands
 {
+	/// <summary>
+	/// Запрашивает у пользователя имя сотрудника, отправляет запрос API на поиск сотрудника в базе данных
+	/// и отображает его данные.
+	/// </summary>
 	public class GetCommand : ICommand<Task>
 	{
 		private readonly IServiceFactory _serviceFactory = new ServiceFactory();

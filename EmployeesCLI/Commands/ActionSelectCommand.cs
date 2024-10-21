@@ -1,5 +1,8 @@
 ﻿namespace EmployeesCLI.Commands
 {
+	/// <summary>
+	/// Просит пользователя выбрать действие для выполнения.
+	/// </summary>
 	public class ActionSelectCommand : ICommand<int>
 	{
 		private const int MinCommandNumber = 1;

@@ -2,6 +2,9 @@
 
 namespace EmployeesCLI.Commands
 {
+	/// <summary>
+	/// Выбрасывает исключение выхода из программы.
+	/// </summary>
 	public class ExitCommand : ICommand<Task>
 	{
 		public async Task Execute()

@@ -5,6 +5,9 @@ using EmployeesCLI.Services;
 
 namespace EmployeesCLI.Controllers
 {
+	/// <summary>
+	/// Контроллер по умолчанию.
+	/// </summary>
 	public class DefaultController : IController
 	{
 		private readonly ICommandFactory _commandFactory = new CommandFactory();

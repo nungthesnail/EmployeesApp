@@ -2,13 +2,26 @@
 
 namespace EmployeesCLI.Services.ErrorProcessing
 {
+	/// <summary>
+	/// Обработчик ответов API с ошибочным кодом ответа.
+	/// </summary>
 	public class ApiErrorProcessor : IErrorProcessor
 	{
+		/// <summary>
+		/// Название заголовка ответа, в котором хранится информация о типе ошибки.
+		/// </summary>
 		public const string ErrorTypeHeaderName = "ErrorType";
 
+		/// <summary>
+		/// Обрабатываемая ошибка API.
+		/// </summary>
 		public ApiErrorModel Error { get; }
 
-        public ApiErrorProcessor(ApiErrorModel error)
+		/// <summary>
+		/// Обработчик ответов API с ошибочным кодом ответа.
+		/// </summary>
+		/// <param name="error">Ошибка API, которую необходимо обработать.</param>
+		public ApiErrorProcessor(ApiErrorModel error)
         {
             Error = error;
         }

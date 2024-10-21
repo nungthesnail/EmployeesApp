@@ -3,6 +3,9 @@ using EmployeesCLI.Services;
 
 namespace EmployeesCLI.Commands
 {
+	/// <summary>
+	/// Запрашивает у пользователя данные сотрудника и отправляет запрос API на обновление данных сотрудника.
+	/// </summary>
 	public class UpdateCommand : ICommand<Task>
 	{
 		private readonly IServiceFactory _serviceFactory = new ServiceFactory();
