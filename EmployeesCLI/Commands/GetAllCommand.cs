@@ -6,7 +6,15 @@ namespace EmployeesCLI.Commands
 	{
 		private readonly IServiceFactory _serviceFactory = new ServiceFactory();
 
-		public async Task Execute()
+        public GetAllCommand()
+        { }
+
+		public GetAllCommand(IServiceFactory serviceFactory)
+		{
+			_serviceFactory = serviceFactory;
+		}
+
+        public async Task Execute()
 		{
 			PrintPrimaryText();
 
